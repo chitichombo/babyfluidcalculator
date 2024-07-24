@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Fluid Requirement Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Baby Fluid Requirement Calculator</h1>
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="weight">Weight at Birth (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.01" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dayOfLife">Day of Life:</label>
+                <input type="number" id="dayOfLife" name="dayOfLife" min="1" max="10" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="interval">Feeding Interval (hours):</label>
+                <input type="number" id="interval" name="interval" min="1" max="24" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sick">Is the Baby Sick?</label>
+                <select id="sick" name="sick">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="button" onclick="calculateFluidRequirement()">Calculate</button>
+                <button type="button" onclick="resetForm()">New Calculation</button>
+            </div>
+        </form>
+        <div id="result"></div>
+        <div id="notes">
+            <h2>Important Considerations:</h2>
+            <ul>
+                <li><strong>Premature Infants:</strong> Fluid requirements may be different and should be determined based on specific guidelines for preterm infants.</li>
+                <li><strong>Medical Conditions:</strong> Infants with certain medical conditions may have different fluid needs, and healthcare providers will adjust volumes accordingly.</li>
+                <li><strong>Expressed Breast Milk:</strong> Consider giving expressed breast milk based on the condition of the baby.</li>
+                <li><strong>Frequency of Feeding:</strong> The total daily volume is divided by the number of feedings per day to determine the amount per feeding session.</li>
+            </ul>
+            <p><strong>Note:</strong> These guidelines provide a general overview and are not a substitute for professional medical advice.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
